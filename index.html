@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mar-Villa Deco | Diseño y Decoración de Eventos</title>
+<meta name="description" content="Mar-Villa Deco crea experiencias memorables a través del diseño y decoración de bodas, eventos sociales y eventos corporativos en Costa Rica." />
+<meta property="og:title" content="Mar-Villa Deco | Diseño y Decoración de Eventos" />
+<meta property="og:description" content="Creamos momentos, diseñamos recuerdos. Diseño y decoración integral de bodas, cumpleaños, bautizos, comuniones, baby showers, graduaciones y aniversarios." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230B0B0D' stroke='%23C9A86B' stroke-width='3'/%3E%3Ctext x='50' y='62' font-family='Georgia,serif' font-size='38' fill='%23C9A86B' text-anchor='middle'%3EMV%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --gold:#C9A86B;
+    --gold-rgb:201,168,107;
+    --champagne:#EADCC1;
+    --ivory:#F7F3EA;
+    --olive:#4A5C46;
+    --taupe:#A89A87;
+    --black:#0B0B0D;
+    --black-2:#131316;
+    --line: rgba(201,168,107,0.28);
+    --font-display:'Cormorant Garamond', serif;
+    --font-script:'Great Vibes', cursive;
+    --font-body:'Montserrat', sans-serif;
+    --nav-h:88px;
+    --section-pad: clamp(80px, 10vw, 150px);
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; cursor:none !important; }
+  html{ scroll-behavior:auto; }
+  body{
+    font-family:var(--font-body);
+    background:var(--black);
+    color:var(--ivory);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit;}
+
+  ::selection{ background:rgba(var(--gold-rgb),0.35); color:var(--ivory); }
+
+  /* ── CURSOR ── */
+  #c-dot{ width:8px; height:8px; background:#F7F3EA; border-radius:50%; position:fixed; top:0; left:0;
+    pointer-events:none; z-index:2147483647; mix-blend-mode:exclusion; will-change:transform; opacity:0; }
+  #c-ring{ width:36px; height:36px; border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:2147483646;
+    background:transparent; border:1px solid rgba(201,168,107,0.55);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12), 0 0 16px rgba(201,168,107,0.15);
+    will-change:transform; opacity:0;
+    transition:width .35s cubic-bezier(.34,1.56,.64,1), height .35s cubic-bezier(.34,1.56,.64,1),
+    background .3s, border-color .3s, border-radius .3s, opacity .3s ease; }
+  #c-dot.cursor-active, #c-ring.cursor-active{ opacity:1; }
+  #c-ring.hovering{ width:62px; height:62px; background:rgba(var(--gold-rgb),0.10); border-color:rgba(var(--gold-rgb),0.7); }
+  #c-ring.on-text{ width:2px; height:24px; border-radius:2px; background:var(--gold); border-color:var(--gold); box-shadow:none; }
+  #c-dot.clicking{ transform:translate(-50%,-50%) scale(.5); }
+  #c-ring.clicking{ transform:translate(-50%,-50%) scale(.8); }
+
+  /* ── DECORATIVE ── */
+  .ornament{ display:flex; align-items:center; justify-content:center; gap:10px; }
+  .ornament .ln{ width:36px; height:1px; background:linear-gradient(90deg, transparent, var(--gold)); }
+  .ornament .ln.r{ background:linear-gradient(90deg, var(--gold), transparent); }
+  .ornament svg{ width:14px; height:14px; }
+
+  /* ── NAV ── */
+  nav{ position:fixed; top:0; left:0; right:0; z-index:900; height:var(--nav-h);
+    display:flex; align-items:center; justify-content:space-between; padding:0 5%;
+    transition:background .5s ease, box-shadow .5s ease, height .4s ease; }
+  nav.scrolled{ background:rgba(11,11,13,0.92); backdrop-filter:blur(16px); box-shadow:0 1px 0 var(--line); height:74px; }
+  .nav-logo{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .nav-logo-mark{ width:42px; height:42px; border:1px solid var(--gold); border-radius:50%; display:flex; align-items:center; justify-content:center; position:relative; }
+  .nav-logo-mark span{ font-family:var(--font-display); font-style:italic; font-size:1.05rem; color:var(--gold); letter-spacing:0.02em; }
+  .nav-logo-text{ display:flex; flex-direction:column; line-height:1; }
+  .nav-logo-text .n1{ font-family:var(--font-display); font-size:1.35rem; font-weight:500; color:var(--ivory); letter-spacing:0.02em; }
+  .nav-logo-text .n1 em{ font-style:italic; color:var(--gold); }
+  .nav-logo-text .n2{ font-size:0.55rem; letter-spacing:0.32em; color:var(--taupe); margin-top:3px; }
+  .nav-links{ display:flex; gap:2.6rem; list-style:none; }
+  .nav-links a{ font-size:0.76rem; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--champagne); text-decoration:none; position:relative; padding-bottom:4px; transition:color .3s; }
+  .nav-links a::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold); transition:width .35s ease; }
+  .nav-links a:hover{ color:var(--gold); }
+  .nav-links a:hover::after{ width:100%; }
+  .nav-cta{ border:1px solid var(--gold); color:var(--gold); padding:11px 26px; font-size:0.72rem; font-weight:600;
+    letter-spacing:0.16em; text-transform:uppercase; text-decoration:none; transition:all .35s ease; }
+  .nav-cta:hover{ background:var(--gold); color:var(--black); }
+  .nav-burger{ display:none; flex-direction:column; gap:5px; width:26px; cursor:pointer; z-index:1200; }
+  .nav-burger span{ height:1px; background:var(--gold); width:100%; transition:all .3s; }
+
+  .mobile-menu{ position:fixed; inset:0; background:var(--black); z-index:1100; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; gap:2.2rem; opacity:0; pointer-events:none; transition:opacity .4s ease; }
+  .mobile-menu.open{ opacity:1; pointer-events:all; }
+  .mobile-menu a{ font-family:var(--font-display); font-size:1.8rem; color:var(--ivory); text-decoration:none; letter-spacing:0.04em; }
+  .mobile-menu a:hover{ color:var(--gold); }
+
+  /* ── HERO ── */
+  .hero{ min-height:100vh; position:relative; display:flex; align-items:center; justify-content:center;
+    overflow:hidden; padding:calc(var(--nav-h) + 40px) 5% 60px; text-align:center; }
+  .hero-bg{ position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 20%, rgba(var(--gold-rgb),0.10) 0%, transparent 65%),
+      radial-gradient(ellipse 50% 40% at 15% 85%, rgba(74,92,70,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 85% 80%, rgba(var(--gold-rgb),0.06) 0%, transparent 60%),
+      var(--black); }
+  .hero-bg-lines{ position:absolute; inset:0; z-index:0; opacity:0.5;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(201,168,107,0.035) 0px, rgba(201,168,107,0.035) 1px, transparent 1px, transparent 64px),
+      repeating-linear-gradient(90deg, rgba(201,168,107,0.035) 0px, rgba(201,168,107,0.035) 1px, transparent 1px, transparent 64px); }
+  .hero-ring{ position:absolute; z-index:1; border:1px solid rgba(201,168,107,0.18); border-radius:50%; }
+  .hero-ring.r1{ width:760px; height:760px; top:50%; left:50%; transform:translate(-50%,-50%); }
+  .hero-ring.r2{ width:920px; height:920px; top:50%; left:50%; transform:translate(-50%,-50%); border-color:rgba(201,168,107,0.08); }
+
+  .hero-content{ position:relative; z-index:2; max-width:760px; }
+  .hero-eyebrow{ font-size:0.72rem; font-weight:600; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold);
+    margin-bottom:1.6rem; display:flex; align-items:center; justify-content:center; gap:0.9rem; }
+  .hero-eyebrow .ln{ width:34px; height:1px; background:var(--gold); }
+  .hero-title{ font-family:var(--font-display); font-weight:500; font-size:clamp(2.6rem, 6.4vw, 5.2rem);
+    line-height:1.12; letter-spacing:0.005em; color:var(--ivory); margin-bottom:1.4rem; overflow:hidden; }
+  .hero-title em{ font-family:var(--font-script); font-style:normal; color:var(--gold); font-size:1.15em; font-weight:400; padding:0 0.08em; }
+  .hero-sub{ font-size:1rem; font-weight:300; color:var(--champagne); line-height:1.85; max-width:520px; margin:0 auto 2.6rem; }
+  .hero-actions{ display:flex; align-items:center; justify-content:center; gap:1.2rem; flex-wrap:wrap; }
+
+  .btn{ display:inline-flex; align-items:center; gap:10px; padding:15px 34px; font-family:var(--font-body);
+    font-weight:600; font-size:0.75rem; letter-spacing:0.16em; text-transform:uppercase; border:none;
+    text-decoration:none; transition:all .35s ease; }
+  .btn-primary{ background:var(--gold); color:var(--black); }
+  .btn-primary:hover{ background:var(--champagne); transform:translateY(-2px); }
+  .btn-outline{ background:transparent; color:var(--ivory); border:1px solid rgba(247,243,234,0.35); }
+  .btn-outline:hover{ border-color:var(--gold); color:var(--gold); }
+  .btn-dark{ background:var(--black); color:var(--gold); border:1px solid var(--gold); }
+  .btn-dark:hover{ background:var(--gold); color:var(--black); }
+
+  .hero-scroll{ position:absolute; bottom:36px; left:50%; transform:translateX(-50%); z-index:2;
+    display:flex; flex-direction:column; align-items:center; gap:10px; }
+  .hero-scroll span{ font-size:0.62rem; letter-spacing:0.24em; text-transform:uppercase; color:var(--taupe); }
+  .hero-scroll-line{ width:1px; height:44px; background:linear-gradient(180deg, var(--gold), transparent); position:relative; overflow:hidden; }
+  .hero-scroll-line::after{ content:''; position:absolute; top:-40px; left:0; width:100%; height:40px; background:var(--gold);
+    animation:scrollDrop 2.2s ease-in-out infinite; }
+  @keyframes scrollDrop{ 0%{ top:-40px; } 100%{ top:44px; } }
+
+  /* ── EVENT TYPES STRIP ── */
+  .events-strip{ background:var(--black-2); padding:3.6rem 5%; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .events-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:1rem; max-width:1200px; margin:0 auto; }
+  .event-item{ display:flex; flex-direction:column; align-items:center; gap:0.9rem; text-align:center; padding:0.6rem; }
+  .event-item svg{ width:30px; height:30px; stroke:var(--gold); fill:none; stroke-width:1.2; transition:transform .4s ease; }
+  .event-item:hover svg{ transform:translateY(-4px) scale(1.08); }
+  .event-item span{ font-size:0.68rem; letter-spacing:0.06em; color:var(--champagne); font-weight:500; }
+
+  /* ── SECTION SHARED ── */
+  section{ padding:var(--section-pad) 5%; position:relative; }
+  .eyebrow{ font-size:0.72rem; font-weight:600; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); margin-bottom:1.1rem; }
+  .stitle{ font-family:var(--font-display); font-weight:500; font-size:clamp(2rem, 4vw, 3.1rem); line-height:1.18;
+    letter-spacing:0.005em; color:var(--ivory); margin-bottom:1.3rem; }
+  .stitle em{ font-family:var(--font-script); font-style:normal; color:var(--gold); font-weight:400; }
+  .ssub{ font-size:0.95rem; color:var(--taupe); line-height:1.85; max-width:520px; font-weight:300; }
+  .section-header{ text-align:center; max-width:640px; margin:0 auto 3.6rem; }
+  .divider-thin{ width:60px; height:1px; background:var(--gold); margin:1.4rem auto; }
+
+  /* ── INTRO ── */
+  .intro-section{ text-align:center; }
+  .intro-quote{ font-family:var(--font-display); font-style:italic; font-size:clamp(1.5rem,2.6vw,2.1rem);
+    color:var(--champagne); max-width:780px; margin:0 auto 1.8rem; line-height:1.5; }
+  .intro-body{ max-width:640px; margin:0 auto; color:var(--taupe); font-size:0.96rem; line-height:1.9; font-weight:300; }
+
+  /* ── SERVICIOS ── */
+  .services-section{ background:var(--black-2); }
+  .services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; max-width:1200px; margin:0 auto; }
+  .service-card{ position:relative; border:1px solid var(--line); overflow:hidden; padding:2.2rem 2rem 2.4rem; }
+  .service-media{ width:84px; height:84px; position:relative; border:1px dashed rgba(var(--gold-rgb),0.45);
+    background:rgba(var(--gold-rgb),0.05); display:flex; align-items:center; justify-content:center; margin-bottom:1.6rem; }
+  .service-media .sv-icon{ display:flex; align-items:center; justify-content:center; }
+  .service-media .sv-icon svg{ width:32px; height:32px; stroke:var(--gold); fill:none; stroke-width:0.9; transition:transform .5s ease; }
+  .service-card:hover .sv-icon svg{ transform:scale(1.1); }
+  .img-tag{ position:absolute; bottom:-8px; left:50%; transform:translateX(-50%); background:var(--black);
+    padding:2px 7px; font-size:0.52rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--taupe); white-space:nowrap; }
+  .service-body{ padding:0; }
+  .service-body h3{ font-family:var(--font-display); font-size:1.5rem; font-weight:500; color:var(--ivory); margin-bottom:0.7rem; }
+  .service-body p{ font-size:0.87rem; color:var(--taupe); line-height:1.75; margin-bottom:1.6rem; font-weight:300; min-height:66px; }
+  .service-link{ font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--gold); text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px; border-bottom:1px solid transparent; transition:border-color .3s; }
+  .service-link:hover{ border-color:var(--gold); }
+
+  /* ── PROCESO ── */
+  .process-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:2.4rem; max-width:1200px; margin:3.6rem auto 0; }
+  .process-item{ position:relative; padding-left:0.2rem; }
+  .process-num{ font-family:var(--font-display); font-size:2.6rem; font-weight:400; color:transparent;
+    -webkit-text-stroke:1px var(--gold); margin-bottom:1.2rem; }
+  .process-item h3{ font-family:var(--font-body); font-size:0.85rem; font-weight:600; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--ivory); margin-bottom:0.8rem; }
+  .process-item p{ font-size:0.87rem; color:var(--taupe); line-height:1.8; font-weight:300; }
+  .process-line{ position:absolute; top:24px; left:-1.2rem; width:1px; height:70%; background:var(--line); }
+  .process-item:first-child .process-line{ display:none; }
+
+  /* ── GALERIA ── */
+  .gallery-section{ background:var(--black-2); }
+  .gallery-tabs{ display:flex; justify-content:center; gap:0; margin:0 auto 3rem; width:fit-content; border:1px solid var(--line); position:relative; }
+  .gtab{ padding:12px 26px; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--taupe);
+    background:transparent; border:none; position:relative; z-index:1; transition:color .3s; }
+  .gtab.active{ color:var(--black); }
+  .gtab-indicator{ position:absolute; top:0; bottom:0; left:0; background:var(--gold); transition:all .4s cubic-bezier(.65,0,.35,1); z-index:0; }
+  .gallery-grid{ display:grid; grid-template-columns:repeat(6,1fr); grid-auto-rows:96px; gap:0.85rem; max-width:1100px; margin:0 auto; }
+  .gitem-inner img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:1; transition:opacity .3s ease; }
+  .gitem-inner svg{ position:relative; z-index:0; }
+  .gitem{ position:relative; overflow:hidden; background:rgba(var(--gold-rgb),0.04);
+    border:1px dashed rgba(var(--gold-rgb),0.4); transition:border-color .3s, background .3s; }
+  .gitem:hover{ border-color:rgba(var(--gold-rgb),0.75); background:rgba(var(--gold-rgb),0.08); }
+  .gitem.big{ grid-column:span 2; grid-row:span 2; }
+  .gitem-inner{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; transition:transform .5s ease; }
+  .gitem-inner svg{ width:22px; height:22px; stroke:rgba(234,220,193,0.6); fill:none; stroke-width:1; }
+  .gitem.big .gitem-inner svg{ width:30px; height:30px; }
+  .gitem:hover .gitem-inner{ transform:scale(1.12); }
+  .gitem-overlay{ position:absolute; inset:0; background:rgba(11,11,13,0); display:flex; align-items:flex-end; justify-content:center;
+    padding-bottom:6px; transition:background .35s ease; }
+  .gitem:hover .gitem-overlay{ background:rgba(11,11,13,0.5); }
+  .gitem-overlay span{ opacity:0; transform:translateY(6px); transition:all .35s ease; font-size:0.5rem; letter-spacing:0.06em;
+    text-transform:uppercase; color:var(--gold); text-align:center; padding:0 4px; }
+  .gitem:hover .gitem-overlay span{ opacity:1; transform:translateY(0); }
+
+  /* ── VALORES ── */
+  .values-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.6rem; max-width:1200px; margin:3.6rem auto 0; }
+  .value-card{ text-align:center; padding:2.6rem 1.6rem; border:1px solid var(--line); transition:border-color .35s, background .35s; }
+  .value-card:hover{ border-color:var(--gold); background:rgba(201,168,107,0.04); }
+  .value-card svg{ width:38px; height:38px; stroke:var(--gold); fill:none; stroke-width:1; margin-bottom:1.3rem; }
+  .value-card h3{ font-family:var(--font-display); font-size:1.2rem; font-weight:500; color:var(--ivory); margin-bottom:0.7rem; letter-spacing:0.03em; }
+  .value-card p{ font-size:0.83rem; color:var(--taupe); line-height:1.7; font-weight:300; }
+
+  /* ── FRASE DE MARCA ── */
+  .quote-section{ text-align:center; background:
+      radial-gradient(ellipse 60% 80% at 50% 50%, rgba(var(--gold-rgb),0.08) 0%, transparent 70%), var(--black);
+    padding:var(--section-pad) 5%; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .quote-text{ font-family:var(--font-display); font-size:clamp(1.7rem, 3.6vw, 2.8rem); font-weight:400; color:var(--ivory);
+    line-height:1.4; max-width:820px; margin:0 auto; }
+  .quote-text .script{ font-family:var(--font-script); color:var(--gold); font-size:1.5em; display:block; margin-bottom:0.4rem; font-weight:400; }
+
+  /* ── SOBRE NOSOTROS ── */
+  .about-grid{ display:grid; grid-template-columns:200px 1fr; gap:3.4rem; align-items:start; max-width:1200px; margin:0 auto; }
+  .about-visual{ width:200px; height:200px; border:1px dashed rgba(var(--gold-rgb),0.45); position:relative;
+    background:rgba(var(--gold-rgb),0.05); display:flex; align-items:center; justify-content:center; }
+  .about-visual-inner{ display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.7rem; }
+  .about-visual-inner .mv{ font-family:var(--font-display); font-style:italic; font-size:2.6rem; color:var(--gold); opacity:0.6; }
+  .about-visual-inner span{ font-size:0.55rem; letter-spacing:0.16em; color:var(--taupe); text-transform:uppercase; }
+  .about-text p{ font-size:0.94rem; color:var(--taupe); line-height:1.9; margin-bottom:1.2rem; font-weight:300; }
+  .about-pillars{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem; }
+  .about-pillar{ display:flex; align-items:center; gap:0.7rem; font-size:0.82rem; color:var(--champagne); }
+  .about-pillar::before{ content:''; width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+
+  /* ── TESTIMONIOS ── */
+  .testi-section{ background:var(--black-2); }
+  .testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; max-width:1200px; margin:0 auto; }
+  .testi-card{ border:1px solid var(--line); padding:2.4rem 2rem; position:relative; }
+  .testi-quote-mark{ font-family:var(--font-display); font-size:3rem; color:var(--gold); opacity:0.4; line-height:1; margin-bottom:0.6rem; }
+  .testi-card p{ font-size:0.9rem; color:var(--taupe); line-height:1.8; font-style:italic; font-family:var(--font-display); font-weight:500;
+    margin-bottom:1.6rem; min-height:88px; }
+  .testi-name{ font-size:0.8rem; color:var(--ivory); font-weight:600; letter-spacing:0.03em; }
+  .testi-event{ font-size:0.72rem; color:var(--gold); letter-spacing:0.08em; text-transform:uppercase; margin-top:2px; }
+  .testi-placeholder-tag{ position:absolute; top:1.2rem; right:1.2rem; font-size:0.6rem; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--taupe); border:1px solid var(--line); padding:3px 8px; }
+
+  /* ── CTA FINAL ── */
+  .cta-final{ text-align:center; background:var(--black); position:relative; overflow:hidden; border-top:1px solid var(--line); }
+  .cta-final::before{ content:''; position:absolute; inset:0;
+    background:radial-gradient(ellipse 70% 60% at 50% 0%, rgba(var(--gold-rgb),0.10) 0%, transparent 65%); }
+  .cta-final-inner{ position:relative; z-index:1; max-width:680px; margin:0 auto; }
+  .cta-final .stitle{ margin-bottom:1rem; }
+  .cta-final .ssub{ margin:0 auto 2.4rem; }
+
+  /* ── CONTACTO ── */
+  .contact-section{ background:var(--black-2); }
+  .contact-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:4.5rem; max-width:1200px; margin:0 auto; }
+  .contact-info h3{ font-family:var(--font-display); font-size:1.5rem; color:var(--ivory); margin-bottom:1.4rem; font-weight:500; }
+  .contact-info p{ font-size:0.9rem; color:var(--taupe); line-height:1.85; margin-bottom:2rem; font-weight:300; }
+  .contact-detail{ display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.6rem; }
+  .contact-detail svg{ width:20px; height:20px; stroke:var(--gold); fill:none; stroke-width:1.2; flex-shrink:0; margin-top:2px; }
+  .contact-detail .label{ font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-bottom:3px; }
+  .contact-detail .value{ font-size:0.9rem; color:var(--ivory); }
+  .socials{ display:flex; gap:0.9rem; margin-top:2rem; }
+  .social-btn{ width:40px; height:40px; border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+    text-decoration:none; transition:all .3s; }
+  .social-btn svg{ width:16px; height:16px; stroke:var(--gold); fill:none; stroke-width:1.3; }
+  .social-btn:hover{ border-color:var(--gold); background:rgba(201,168,107,0.08); }
+
+  .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; }
+  .form-field-wrap{ display:flex; flex-direction:column; gap:0.5rem; }
+  .form-field-wrap.full{ grid-column:1 / -1; }
+  .form-field-wrap label{ font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--taupe); }
+  .form-field{ background:transparent; border:none; border-bottom:1px solid var(--line); padding:10px 2px;
+    font-family:var(--font-body); font-size:0.9rem; color:var(--ivory); outline:none; transition:border-color .3s; }
+  .form-field:focus{ border-color:var(--gold); }
+  select.form-field{ appearance:none; -webkit-appearance:none; -moz-appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C9A86B' stroke-width='1.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat:no-repeat; background-position:right 2px center; background-size:14px; padding-right:22px; }
+  select.form-field option{ background:#141416; color:var(--ivory); }
+  select.form-field:invalid{ color:rgba(247,243,234,0.55); }
+  textarea.form-field{ resize:vertical; min-height:90px; font-family:var(--font-body); }
+  .form-field::placeholder{ color:rgba(168,154,135,0.5); }
+  .contact-form .btn{ margin-top:1.6rem; width:100%; justify-content:center; }
+  .form-note{ font-size:0.74rem; color:var(--taupe); margin-top:0.9rem; text-align:center; }
+  .form-note svg{ width:13px; height:13px; stroke:var(--gold); fill:none; stroke-width:1.4; vertical-align:-2px; margin-right:5px; }
+
+  /* ── FOOTER ── */
+  footer{ background:var(--black); border-top:1px solid var(--line); padding:4.5rem 5% 2rem; }
+  .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr; gap:3rem; max-width:1200px; margin:0 auto 3rem; }
+  .footer-brand p{ font-size:0.85rem; color:var(--taupe); line-height:1.8; margin-top:1.2rem; font-weight:300; max-width:300px; }
+  footer h4{ font-family:var(--font-body); font-size:0.74rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:1.3rem; }
+  footer ul{ list-style:none; }
+  footer ul li{ margin-bottom:0.7rem; }
+  footer ul a{ font-size:0.85rem; color:var(--taupe); text-decoration:none; transition:color .25s; }
+  footer ul a:hover{ color:var(--gold); }
+  .footer-bottom{ max-width:1200px; margin:0 auto; border-top:1px solid var(--line); padding-top:1.6rem;
+    display:flex; justify-content:space-between; align-items:center; font-size:0.76rem; color:var(--taupe); flex-wrap:wrap; gap:1rem; }
+  .footer-bottom .gold{ color:var(--gold); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width:1024px){
+    .events-grid{ grid-template-columns:repeat(4,1fr); row-gap:2rem; }
+    .services-grid{ grid-template-columns:1fr; }
+    .process-grid{ grid-template-columns:1fr 1fr; row-gap:2.4rem; }
+    .gallery-grid{ grid-template-columns:repeat(4,1fr); }
+    .values-grid{ grid-template-columns:1fr 1fr; }
+    .about-grid{ grid-template-columns:1fr; gap:3rem; }
+    .about-visual{ margin:0 auto; }
+    .testi-grid{ grid-template-columns:1fr; }
+    .contact-grid{ grid-template-columns:1fr; gap:3rem; }
+    .footer-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width:640px){
+    *,*::before,*::after{ cursor:auto !important; }
+    #c-dot,#c-ring{ display:none; }
+    .nav-links, .nav-cta{ display:none; }
+    .nav-burger{ display:flex; }
+    .events-grid{ grid-template-columns:repeat(3,1fr); }
+    .process-line{ display:none; }
+    .gallery-grid{ grid-template-columns:repeat(3,1fr); grid-auto-rows:78px; gap:0.6rem; }
+    .gitem.big{ grid-column:span 2; grid-row:span 1; }
+    .values-grid{ grid-template-columns:1fr; }
+    .form-grid{ grid-template-columns:1fr; }
+    .footer-grid{ grid-template-columns:1fr; gap:2.2rem; }
+    section{ padding:70px 6%; }
+  }
+</style>
+</head>
+<body>
+
+<div id="c-dot"></div>
+<div id="c-ring"></div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#inicio" class="nav-logo">
+    <span class="nav-logo-mark"><span>MV</span></span>
+    <span class="nav-logo-text">
+      <span class="n1">Mar-<em>Villa</em></span>
+      <span class="n2">DECO</span>
+    </span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#nosotros">Sobre Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta magnetic">Cotizar Evento</a>
+  <div class="nav-burger" id="burger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#inicio">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#galeria">Galería</a>
+  <a href="#nosotros">Sobre Nosotros</a>
+  <a href="#contacto">Contacto</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-bg-lines"></div>
+  <div class="hero-ring r1"></div>
+  <div class="hero-ring r2"></div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow"><span class="ln"></span> Diseño &amp; Decoración de Eventos <span class="ln"></span></p>
+    <h1 class="hero-title">Creamos momentos,<br>diseñamos <em>recuerdos</em></h1>
+    <p class="hero-sub">Diseñamos y decoramos eventos únicos, cuidando cada detalle para convertir tus ideas en experiencias memorables.</p>
+    <div class="hero-actions">
+      <a href="#servicios" class="btn btn-primary magnetic">Conoce Nuestros Servicios</a>
+      <a href="#contacto" class="btn btn-outline magnetic">Cotiza Tu Evento</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Descubre</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- EVENT TYPES STRIP -->
+<div class="events-strip">
+  <div class="events-grid">
+    <div class="event-item reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 3v3M9 4.5c0 1 1.2 1 1.2 2S9 8 9 8m6-3.5c0 1-1.2 1-1.2 2S15 8 15 8M4 20v-6a2 2 0 012-2h12a2 2 0 012 2v6M4 20h16M4 20a2 2 0 002 2h12a2 2 0 002-2M6 12v-1a2 2 0 012-2h8a2 2 0 012 2v1"/></svg>
+      <span>Cumpleaños</span>
+    </div>
+    <div class="event-item reveal">
+      <svg viewBox="0 0 24 24"><circle cx="9" cy="14" r="4.2"/><circle cx="15" cy="14" r="4.2"/></svg>
+      <span>Bodas</span>
+    </div>
+    <div class="event-item reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 3v18M6 8h12M8 5h8"/></svg>
+      <span>Primeras Comuniones</span>
+    </div>
+    <div class="event-item reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 3c-2.5 2-3.5 4.5-3.5 7a3.5 3.5 0 007 0c0-2.5-1-5-3.5-7z"/><path d="M8.5 15c-1.5 1-2.5 2.8-2.5 4.5M15.5 15c1.5 1 2.5 2.8 2.5 4.5"/><path d="M6 21h12"/></svg>
+      <span>Bautizos</span>
+    </div>
+    <div class="event-item reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 6c-1.6-2-4.6-2.2-5.8-.6-1.2 1.6.2 3.8 2.2 4.4M12 6c1.6-2 4.6-2.2 5.8-.6 1.2 1.6-.2 3.8-2.2 4.4M12 6v3"/><path d="M12 9c-3 0-5.5 2.2-5.5 5.5S9 20 12 20s5.5-2.2 5.5-5.5S15 9 12 9z"/></svg>
+      <span>Baby Showers</span>
+    </div>
+    <div class="event-item reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11.5V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 9v6"/></svg>
+      <span>Graduaciones</span>
+    </div>
+    <div class="event-item reveal">
+      <svg viewBox="0 0 24 24"><path d="M4 12c2-3 5-2 6 0 1-2 4-3 6 0s-1 6-6 9c-5-3-8-6-6-9z"/></svg>
+      <span>Aniversarios</span>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro-section" id="quienes-somos">
+  <div class="section-header reveal">
+    <p class="eyebrow">Quiénes Somos</p>
+    <p class="intro-quote">"Transformamos ideas en experiencias memorables."</p>
+    <div class="divider-thin"></div>
+  </div>
+  <p class="intro-body reveal">Mar-Villa Deco combina diseño, creatividad y decoración para crear ambientes personalizados que representan la esencia de cada celebración. Cada evento debe sentirse único — por eso cuidamos cada detalle, desde el concepto hasta el último centro de mesa.</p>
+</section>
+
+<!-- SERVICIOS -->
+<section class="services-section" id="servicios">
+  <div class="section-header reveal">
+    <p class="eyebrow">Nuestros Servicios</p>
+    <h2 class="stitle">Ambientes diseñados <em>para ti</em></h2>
+    <p class="ssub" style="margin:0 auto;">Desde el concepto hasta el montaje, diseñamos cada celebración con propósito y elegancia.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-media">
+        <div class="sv-icon"><svg viewBox="0 0 24 24"><circle cx="9" cy="14" r="4.2"/><circle cx="15" cy="14" r="4.2"/></svg></div>
+        <span class="img-tag"></span>
+      </div>
+      <div class="service-body">
+        <h3>Bodas</h3>
+        <p>Diseñamos escenarios románticos y elegantes para uno de los días más importantes: ceremonia, arcos florales, mesa de novios y ambientación completa.</p>
+        <a href="#contacto" class="service-link">Ver Servicio →</a>
+      </div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-media">
+        <div class="sv-icon"><svg viewBox="0 0 24 24"><path d="M12 6c-1.6-2-4.6-2.2-5.8-.6-1.2 1.6.2 3.8 2.2 4.4M12 6c1.6-2 4.6-2.2 5.8-.6 1.2 1.6-.2 3.8-2.2 4.4M12 6v3"/><path d="M12 9c-3 0-5.5 2.2-5.5 5.5S9 20 12 20s5.5-2.2 5.5-5.5S15 9 12 9z"/></svg></div>
+        <span class="img-tag"></span>
+      </div>
+      <div class="service-body">
+        <h3>Eventos Sociales</h3>
+        <p>Cumpleaños, bautizos, primeras comuniones, baby showers, graduaciones y aniversarios diseñados alrededor de tu personalidad y tus momentos especiales.</p>
+        <a href="#contacto" class="service-link">Ver Servicio →</a>
+      </div>
+    </div>
+
+    <div class="service-card reveal">
+      <div class="service-media">
+        <div class="sv-icon"><svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="0.5"/><path d="M8 8V5a1 1 0 011-1h6a1 1 0 011 1v3"/></svg></div>
+        <span class="img-tag"></span>
+      </div>
+      <div class="service-body">
+        <h3>Eventos Corporativos</h3>
+        <p>Espacios profesionales y sofisticados que representan la identidad de cada empresa: cenas, lanzamientos y celebraciones empresariales.</p>
+        <a href="#contacto" class="service-link">Ver Servicio →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="section-header reveal">
+    <p class="eyebrow">Cómo Trabajamos</p>
+    <h2 class="stitle">Un proceso <em>pensado</em> para ti</h2>
+  </div>
+  <div class="process-grid">
+    <div class="process-item reveal"><div class="process-line"></div>
+      <div class="process-num">01</div>
+      <h3>Conversamos</h3>
+      <p>Conocemos la idea, necesidades y expectativas del cliente.</p>
+    </div>
+    <div class="process-item reveal"><div class="process-line"></div>
+      <div class="process-num">02</div>
+      <h3>Diseñamos</h3>
+      <p>Creamos el concepto visual del evento.</p>
+    </div>
+    <div class="process-item reveal"><div class="process-line"></div>
+      <div class="process-num">03</div>
+      <h3>Planificamos</h3>
+      <p>Definimos decoración, materiales, flores, iluminación y distribución.</p>
+    </div>
+    <div class="process-item reveal"><div class="process-line"></div>
+      <div class="process-num">04</div>
+      <h3>Transformamos</h3>
+      <p>Realizamos el montaje y convertimos el espacio en la experiencia diseñada.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="gallery-section" id="galeria">
+  <div class="section-header reveal">
+    <p class="eyebrow">Galería</p>
+    <h2 class="stitle">Momentos que <em>diseñamos</em></h2>
+  </div>
+
+  <div class="gallery-tabs" id="gallery-tabs">
+    <div class="gtab-indicator" id="gtab-indicator"></div>
+    <button class="gtab active" data-cat="todos">Todos</button>
+    <button class="gtab" data-cat="bodas">Bodas</button>
+    <button class="gtab" data-cat="sociales">Eventos Sociales</button>
+    <button class="gtab" data-cat="corporativos">Corporativos</button>
+  </div>
+
+  <div class="gallery-grid" id="gallery-grid"></div>
+</section>
+
+<!-- VALORES -->
+<section id="valores">
+  <div class="section-header reveal">
+    <p class="eyebrow">Propuesta de Valor</p>
+    <h2 class="stitle">Lo que nos <em>define</em></h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 3l2.2 5.8L20 11l-5.8 2.2L12 19l-2.2-5.8L4 11l5.8-2.2z"/></svg>
+      <h3>Elegancia</h3>
+      <p>Diseños sofisticados y cuidadosamente equilibrados.</p>
+    </div>
+    <div class="value-card reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 21s-7-4.4-9.5-9C.8 8.4 2.6 5 6 5c2 0 3.5 1.2 4.2 2.4C10.9 6.2 12.4 5 14.4 5c3.4 0 5.2 3.4 3.5 7-2.5 4.6-5.9 9-5.9 9z"/></svg>
+      <h3>Pasión</h3>
+      <p>Ponemos dedicación en cada proyecto.</p>
+    </div>
+    <div class="value-card reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 2l3 5h5l-4 4 1.5 6L12 14l-5.5 3L8 11 4 7h5z"/></svg>
+      <h3>Detalle</h3>
+      <p>Cada elemento tiene un propósito dentro del diseño.</p>
+    </div>
+    <div class="value-card reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/></svg>
+      <h3>Confianza</h3>
+      <p>Acompañamos al cliente durante todo el proceso.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FRASE DE MARCA -->
+<section class="quote-section">
+  <p class="quote-text reveal"><span class="script">Cada detalle cuenta.</span>Cada momento permanece.</p>
+</section>
+
+<!-- SOBRE NOSOTROS -->
+<section id="nosotros">
+  <div class="about-grid">
+    <div class="about-visual reveal-left">
+      <div class="about-visual-inner">
+        <span class="mv">MV</span>
+        <span class="Deco">Deco</span>
+        <span></span>
+      </div>
+    </div>
+    <div class="about-text reveal-right">
+      <p class="eyebrow">Sobre Nosotros</p>
+      <h2 class="stitle">Un equipo dedicado <em>al detalle</em></h2>
+      <p>Somos un equipo dedicado al diseño y decoración de eventos, enfocado en transformar espacios y conceptos en experiencias memorables.</p>
+      <p>Nuestro enfoque está en la creatividad, la atención personalizada y el compromiso con cada detalle — porque creemos que cada celebración merece sentirse única.</p>
+      <div class="about-pillars">
+        <div class="about-pillar">Creatividad</div>
+        <div class="about-pillar">Atención personalizada</div>
+        <div class="about-pillar">Diseño con propósito</div>
+        <div class="about-pillar">Compromiso total</div>
+      </div>
+      <a href="#contacto" class="btn btn-primary magnetic" style="margin-top:2.2rem;">Conversemos →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testi-section" id="testimonios">
+  <div class="section-header reveal">
+    <p class="eyebrow">Testimonios</p>
+    <h2 class="stitle">Lo que dicen <em>de nosotros</em></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <span class="testi-placeholder-tag">Próximamente</span>
+      <div class="testi-quote-mark">"</div>
+      <p>Espacio reservado para el testimonio de un cliente real sobre su experiencia con Mar-Villa Deco.</p>
+      <div class="testi-name">Laura Chacón Barboza</div>
+      <div class="testi-event">Cumpleaños</div>
+    </div>
+    <div class="testi-card reveal">
+      <span class="testi-placeholder-tag">Próximamente</span>
+      <div class="testi-quote-mark">"</div>
+      <p>Espacio reservado para el testimonio de un cliente real sobre su experiencia con Mar-Villa Deco.</p>
+      <div class="testi-name">Nombre del cliente</div>
+      <div class="testi-event">Tipo de evento</div>
+    </div>
+    <div class="testi-card reveal">
+      <span class="testi-placeholder-tag">Próximamente</span>
+      <div class="testi-quote-mark">"</div>
+      <p>Espacio reservado para el testimonio de un cliente real sobre su experiencia con Mar-Villa Deco.</p>
+      <div class="testi-name">Nombre del cliente</div>
+      <div class="testi-event">Tipo de evento</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-final-inner reveal">
+    <p class="eyebrow">Empecemos</p>
+    <h2 class="stitle">¿Imaginamos juntos <em>tu próximo evento</em>?</h2>
+    <p class="ssub">Cuéntanos tu idea y creemos una experiencia diseñada especialmente para ti.</p>
+    <a href="#contacto" class="btn btn-primary magnetic">Solicitar Cotización</a>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact-section" id="contacto">
+  <div class="contact-grid">
+    <div class="contact-info reveal-left">
+      <p class="eyebrow">Contacto</p>
+      <h3>Hablemos de tu evento</h3>
+      <p>Escríbenos y cuéntanos tu idea. Con gusto te ayudamos a diseñar una experiencia hecha a tu medida.</p>
+
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="1"/></svg>
+        <div><div class="label">Correo</div><div class="value"> mariabarboza@yahoo.com</div></div>
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.2 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.7a2 2 0 01-.4 2.1L8.1 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2.1z"/></svg>
+        <div><div class="label">WhatsApp</div><a class="value" href="https://wa.me/50688159164" target="_blank" rel="noopener" style="text-decoration:none;">+506 8815-9164</a></div>
+      </div>
+      <div class="contact-detail">
+        <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-11.5A7 7 0 0112 2a7 7 0 017 7.5C19 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg>
+        <div><div class="label">Ubicación</div><div class="value">Cartago, Costa Rica</div></div>
+      </div>
+
+      <div class="socials">
+        <a href="https://wa.me/50688159164" target="_blank" rel="noopener" class="social-btn magnetic" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.2 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.7a2 2 0 01-.4 2.1L8.1 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2.1z"/></svg></a>
+        <a href="#" class="social-btn magnetic" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+        <a href="#" class="social-btn magnetic" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M15 8h2V4h-2a4 4 0 00-4 4v2H9v4h2v6h4v-6h2.5l.5-4H15V8z"/></svg></a>
+        <a href="#" class="social-btn magnetic" aria-label="Pinterest"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 17c1-2 1.5-4.5 1.5-4.5m0 0c-.4-.8-.5-2.4.4-3.3 1-1 2.6-.5 2.9.7.3 1.2-.7 2.6-.7 3.9 0 1 .8 1.7 1.7 1.7 1.9 0 3.2-2.2 3.2-4.6 0-2-1.5-4-4.3-4-3.3 0-5 2.3-5 4.5 0 1 .3 1.7.8 2.2"/></svg></a>
+      </div>
+    </div>
+
+    <form class="contact-form reveal-right" id="quoteForm">
+      <div class="form-grid">
+        <div class="form-field-wrap">
+          <label>Nombre</label>
+          <input type="text" id="q-name" class="form-field" placeholder="Tu nombre completo" required />
+        </div>
+        <div class="form-field-wrap">
+          <label>Correo Electrónico</label>
+          <input type="email" id="q-email" class="form-field" placeholder="tu@correo.com" required />
+        </div>
+        <div class="form-field-wrap">
+          <label>Tipo de Evento</label>
+          <select class="form-field" id="q-type" required>
+            <option value="">Selecciona una opción</option>
+            <option>Boda</option>
+            <option>Cumpleaños</option>
+            <option>Primera Comunión</option>
+            <option>Bautizo</option>
+            <option>Baby Shower</option>
+            <option>Graduación</option>
+            <option>Aniversario</option>
+            <option>Evento Corporativo</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-field-wrap">
+          <label>Fecha del Evento</label>
+          <input type="date" id="q-date" class="form-field" />
+        </div>
+        <div class="form-field-wrap full">
+          <label>Cantidad Aproximada de Invitados</label>
+          <input type="number" id="q-guests" class="form-field" placeholder="Ej. 100" min="1" />
+        </div>
+        <div class="form-field-wrap full">
+          <label>Mensaje</label>
+          <textarea class="form-field" id="q-message" placeholder="Cuéntanos sobre tu evento e ideas..."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary magnetic">Enviar Solicitud</button>
+      <p class="form-note"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.7A2 2 0 014.2 2h3a2 2 0 012 1.7c.1.9.4 1.9.7 2.7a2 2 0 01-.4 2.1L8.1 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2.1z"/></svg>Tu solicitud se enviará por WhatsApp al +506 8815-9164</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#inicio" class="nav-logo">
+        <span class="nav-logo-mark"><span>MV</span></span>
+        <span class="nav-logo-text">
+          <span class="n1">Mar-<em>Villa</em></span>
+          <span class="n2">DECO</span>
+        </span>
+      </a>
+      <p>Diseño y decoración de eventos. Creamos momentos, diseñamos recuerdos.</p>
+    </div>
+    <div>
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#servicios">Bodas</a></li>
+        <li><a href="#servicios">Eventos Sociales</a></li>
+        <li><a href="#servicios">Eventos Corporativos</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Síguenos</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Pinterest</a></li>
+        <li><a href="https://wa.me/50688159164" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Mar-Villa Deco. Todos los derechos reservados.</span>
+    <span>Diseñado con <span class="gold">elegancia</span> en Cartago por Nextek S.A., Costa Rica</span>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+<script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+
+<script>
+  // ── GALLERY DATA ──
+  const galleryIcons = {
+    ring: '<svg viewBox="0 0 24 24"><circle cx="9" cy="14" r="4.2"/><circle cx="15" cy="14" r="4.2"/></svg>',
+    flower: '<svg viewBox="0 0 24 24"><path d="M12 3c-2.5 2-3.5 4.5-3.5 7a3.5 3.5 0 007 0c0-2.5-1-5-3.5-7z"/><path d="M8.5 15c-1.5 1-2.5 2.8-2.5 4.5M15.5 15c1.5 1 2.5 2.8 2.5 4.5"/></svg>',
+    candle: '<svg viewBox="0 0 24 24"><path d="M12 3v3M9 4.5c0 1 1.2 1 1.2 2S9 8 9 8"/><rect x="8" y="9" width="8" height="11" rx="0.5"/></svg>',
+    cap: '<svg viewBox="0 0 24 24"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11.5V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg>',
+    table: '<svg viewBox="0 0 24 24"><ellipse cx="12" cy="7" rx="8" ry="3"/><path d="M4 7v6a8 3 0 0016 0V7"/></svg>',
+    arch: '<svg viewBox="0 0 24 24"><path d="M4 21V11a8 8 0 0116 0v10"/></svg>',
+    briefcase: '<svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="0.5"/><path d="M8 8V5a1 1 0 011-1h6a1 1 0 011 1v3"/></svg>',
+    dove: '<svg viewBox="0 0 24 24"><path d="M4 12c2-3 5-2 6 0 1-2 4-3 6 0s-1 6-6 9c-5-3-8-6-6-9z"/></svg>',
+  };
+
+  // Carpeta donde deben ir las fotos, junto a este index.html:
+  const GALLERY_PATH = 'img/galeria/';
+  // Extensiones que se intentarán en este orden para cada foto.
+  const GALLERY_EXTS = ['jpg', 'jpeg', 'png'];
+
+  // "img" va SIN extensión: el código prueba .jpg, .jpeg y .png automáticamente.
+  const galleryData = [
+    { cat:'bodas', size:'big', icon:'arch', label:'Ceremonia', img:'bodas-ceremonia' },
+    { cat:'bodas', size:'', icon:'ring', label:'Mesa de Novios', img:'bodas-mesa-novios' },
+    { cat:'sociales', size:'', icon:'candle', label:'Cumpleaños', img:'sociales-cumpleanos' },
+    { cat:'corporativos', size:'', icon:'briefcase', label:'Cena Empresarial', img:'corporativos-cena-empresarial' },
+    { cat:'sociales', size:'', icon:'flower', label:'Baby Shower', img:'sociales-baby-shower' },
+    { cat:'bodas', size:'', icon:'table', label:'Recepción', img:'bodas-recepcion' },
+    { cat:'sociales', size:'big', icon:'cap', label:'Graduación', img:'sociales-graduacion' },
+    { cat:'sociales', size:'', icon:'dove', label:'Aniversario', img:'sociales-aniversario' },
+    { cat:'corporativos', size:'', icon:'table', label:'Lanzamiento', img:'corporativos-lanzamiento' },
+    { cat:'bodas', size:'', icon:'flower', label:'Centros de Mesa', img:'bodas-centros-mesa' },
+  ];
+
+  // Prueba .jpg -> .jpeg -> .png para una foto; si ninguna existe, deja el ícono de fondo visible.
+  function tryGalleryExt(imgEl, base, attempt){
+    if (attempt >= GALLERY_EXTS.length) { imgEl.style.opacity = '0'; return; }
+    imgEl.onerror = () => tryGalleryExt(imgEl, base, attempt + 1);
+    imgEl.src = GALLERY_PATH + base + '.' + GALLERY_EXTS[attempt];
+  }
+
+  function renderGallery(filter){
+    const grid = document.getElementById('gallery-grid');
+    grid.innerHTML = '';
+    const items = filter === 'todos' ? galleryData : galleryData.filter(g => g.cat === filter);
+    items.forEach((item, i) => {
+      const el = document.createElement('div');
+      el.className = 'gitem' + (item.size ? ' ' + item.size : '');
+      el.style.opacity = '0';
+      el.innerHTML = `
+        <div class="gitem-inner">
+          ${galleryIcons[item.icon]}
+          <img alt="${item.label} - Mar-Villa Deco" loading="lazy">
+        </div>
+        <div class="gitem-overlay"><span>${item.label}</span></div>
+      `;
+      grid.appendChild(el);
+      tryGalleryExt(el.querySelector('.gitem-inner img'), item.img, 0);
+      gsap.to(el, { opacity:1, duration:0.5, delay:i*0.06, ease:'power2.out' });
+    });
+  }
+
+  function initGalleryTabs(){
+    const tabs = document.querySelectorAll('.gtab');
+    const indicator = document.getElementById('gtab-indicator');
+    function moveIndicator(tab){
+      const wrap = tab.closest('.gallery-tabs');
+      const r = tab.getBoundingClientRect();
+      const pr = wrap.getBoundingClientRect();
+      gsap.to(indicator, { x:r.left-pr.left, width:r.width, height:r.height, duration:0.4, ease:'power2.inOut' });
+    }
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t=>t.classList.remove('active'));
+        tab.classList.add('active');
+        moveIndicator(tab);
+        renderGallery(tab.dataset.cat);
+      });
+    });
+    setTimeout(()=>{ if(tabs[0]) moveIndicator(tabs[0]); }, 150);
+  }
+
+  // ── CURSOR ──
+  const HOVER_SEL = 'a, button, .magnetic, .service-card, .value-card, .gitem, .event-item, .testi-card, input, select, textarea, .social-btn';
+  const TEXT_SEL = 'p, h1, h2, h3, li';
+
+  function initCursor(){
+    const dot = document.getElementById('c-dot');
+    const ring = document.getElementById('c-ring');
+    if(!dot || !ring || typeof gsap === 'undefined') return;
+
+    // Center both elements on their own coordinate via xPercent/yPercent so
+    // later gsap.set({x,y}) calls don't wipe out the CSS translate(-50%,-50%).
+    gsap.set([dot, ring], { xPercent: -50, yPercent: -50 });
+
+    let mx = window.innerWidth/2, my = window.innerHeight/2, rx = mx, ry = my;
+    let started = false;
+
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      gsap.set(dot, { x: mx, y: my });
+      if(!started){
+        started = true;
+        rx = mx; ry = my;
+        gsap.set(ring, { x: rx, y: ry });
+        dot.classList.add('cursor-active');
+        ring.classList.add('cursor-active');
+      }
+    });
+
+    gsap.ticker.add(() => {
+      if(!started) return;
+      rx += (mx-rx)*0.16; ry += (my-ry)*0.16;
+      gsap.set(ring, { x: rx, y: ry });
+    });
+
+    // Event delegation so dynamically-rendered elements (gallery items after
+    // a tab switch, etc.) still trigger the hover / text states correctly.
+    document.addEventListener('mouseover', e => {
+      const hoverTarget = e.target.closest(HOVER_SEL);
+      if(hoverTarget){ ring.classList.add('hovering'); return; }
+      const textTarget = e.target.closest(TEXT_SEL);
+      if(textTarget){ ring.classList.add('on-text'); }
+    });
+    document.addEventListener('mouseout', e => {
+      const hoverTarget = e.target.closest(HOVER_SEL);
+      if(hoverTarget && !e.relatedTarget?.closest?.(HOVER_SEL)) ring.classList.remove('hovering');
+      const textTarget = e.target.closest(TEXT_SEL);
+      if(textTarget && !e.relatedTarget?.closest?.(TEXT_SEL)) ring.classList.remove('on-text');
+    });
+
+    document.addEventListener('mousedown', () => { dot.classList.add('clicking'); ring.classList.add('clicking'); });
+    document.addEventListener('mouseup', () => { dot.classList.remove('clicking'); ring.classList.remove('clicking'); });
+
+    // Hide native-cursor override / our custom cursor cleanly if the mouse leaves the window
+    document.documentElement.addEventListener('mouseleave', () => gsap.to([dot, ring], { opacity:0, duration:0.25 }));
+    document.documentElement.addEventListener('mouseenter', () => { if(started) gsap.to([dot, ring], { opacity:1, duration:0.25 }); });
+  }
+
+  // ── MAGNETIC ──
+  function initMagnetic(){
+    document.querySelectorAll('.magnetic').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r = btn.getBoundingClientRect();
+        gsap.to(btn, { x:(e.clientX-r.left-r.width/2)*0.35, y:(e.clientY-r.top-r.height/2)*0.35, duration:0.4, ease:'power2.out' });
+      });
+      btn.addEventListener('mouseleave', () => gsap.to(btn, { x:0, y:0, duration:0.7, ease:'elastic.out(1,0.4)' }));
+    });
+  }
+
+  // ── COTIZACIÓN VÍA WHATSAPP ──
+  const WHATSAPP_NUMBER = '50688159164';
+
+  function initQuoteForm(){
+    const form = document.getElementById('quoteForm');
+    if(!form) return;
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const name = document.getElementById('q-name').value.trim();
+      const email = document.getElementById('q-email').value.trim();
+      const type = document.getElementById('q-type').value.trim();
+      const date = document.getElementById('q-date').value;
+      const guests = document.getElementById('q-guests').value.trim();
+      const message = document.getElementById('q-message').value.trim();
+
+      let dateFormatted = 'No especificada';
+      if(date){
+        const [y,m,d] = date.split('-');
+        dateFormatted = `${d}/${m}/${y}`;
+      }
+
+      const lines = [
+        'Hola Mar-Villa Deco, quisiera solicitar una cotización para mi evento:',
+        '',
+        `*Nombre:* ${name || 'No especificado'}`,
+        `*Tipo de evento:* ${type || 'No especificado'}`,
+        `*Correo:* ${email || 'No especificado'}`,
+        `*Fecha del evento:* ${dateFormatted}`,
+        `*Cantidad de invitados:* ${guests || 'No especificada'}`,
+        `*Mensaje:* ${message || 'Sin mensaje adicional'}`,
+      ];
+
+      const text = encodeURIComponent(lines.join('\n'));
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+    });
+  }
+
+  // ── NAV ──
+  function initNav(){
+    const nav = document.getElementById('main-nav');
+    ScrollTrigger.create({ start:60, onEnter:()=>nav.classList.add('scrolled'), onLeaveBack:()=>nav.classList.remove('scrolled') });
+
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => {
+      menu.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+  }
+
+  // ── HERO ──
+  function initHero(){
+    const title = document.querySelector('.hero-title');
+    if(!title) return;
+    const st = new SplitType(title, { types:'words' });
+    gsap.from(st.words, { y:70, opacity:0, rotateX:-50, stagger:0.08, duration:1.1, ease:'power4.out', delay:0.3, transformOrigin:'0% 50% -60px' });
+    gsap.from('.hero-eyebrow', { y:16, opacity:0, duration:0.8, ease:'power3.out', delay:0.15 });
+    gsap.from('.hero-sub', { y:16, opacity:0, duration:0.8, ease:'power3.out', delay:0.85 });
+    gsap.from('.hero-actions', { y:16, opacity:0, duration:0.7, ease:'power3.out', delay:1.1 });
+    gsap.from('.hero-ring', { scale:0.8, opacity:0, duration:1.6, ease:'power3.out', delay:0.4, stagger:0.15 });
+  }
+
+  // ── REVEALS ──
+  function initReveals(){
+    gsap.utils.toArray('.reveal').forEach(el => {
+      gsap.from(el, { y:44, opacity:0, duration:0.9, ease:'power3.out', scrollTrigger:{ trigger:el, start:'top 90%' } });
+    });
+    gsap.utils.toArray('.reveal-left').forEach(el => {
+      gsap.from(el, { x:-50, opacity:0, duration:0.9, ease:'power3.out', scrollTrigger:{ trigger:el, start:'top 88%' } });
+    });
+    gsap.utils.toArray('.reveal-right').forEach(el => {
+      gsap.from(el, { x:50, opacity:0, duration:0.9, ease:'power3.out', scrollTrigger:{ trigger:el, start:'top 88%' } });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    gsap.registerPlugin(ScrollTrigger);
+    renderGallery('todos');
+    initGalleryTabs();
+    initNav();
+    initHero();
+    initReveals();
+    initQuoteForm();
+
+    const lenis = new Lenis({ lerp:0.09 });
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t*1000));
+    gsap.ticker.lagSmoothing(0);
+
+    // Match the CSS breakpoint (640px) exactly, and only enable the custom
+    // cursor on devices that actually have a fine pointer (mouse/trackpad).
+    const hasFinePointer = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+    const isNarrow = window.innerWidth <= 640;
+    if(hasFinePointer && !isNarrow){ initCursor(); }
+    initMagnetic();
+  });
+</script>
+
+</body>
+</html>
